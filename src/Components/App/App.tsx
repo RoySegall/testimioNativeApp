@@ -1,12 +1,12 @@
-import React, {useMemo} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {BranchesWrapped, HomeWrapped} from './RoutedComponents';
-import {userStore} from '../../Stores';
-import {NotLoggedIn} from '../NotLoggedIn';
-import {observer} from 'mobx-react-lite';
+import React, { useMemo } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BranchesWrapped, HomeWrapped } from './RoutedComponents';
+import { userStore } from '../../Stores';
+import { NotLoggedIn } from '../NotLoggedIn';
+import { observer } from 'mobx-react-lite';
 
-const {Screen, Navigator} = createNativeStackNavigator();
+const { Screen, Navigator } = createNativeStackNavigator();
 
 export const App: React.FC = observer(() => {
   const UserStore = useMemo(() => userStore, []);
