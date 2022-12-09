@@ -6,10 +6,6 @@ import {
 } from '../Variables/color';
 
 export const style = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    width: '90%',
-  },
   card: {
     flexDirection: 'row',
     alignContent: 'space-between',
@@ -30,17 +26,13 @@ export const style = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 15,
   },
-  cardColumn: {
-    flexDirection: 'column',
-  },
-  text: {
-    fontFamily: 'HelveticaNeue-Light',
-    fontSize: 18,
-  },
   title: {
     fontFamily: 'HelveticaNeue-Light',
     fontWeight: 'bold',
     fontSize: 18,
     paddingBottom: 10,
+  },
+  cardColumn: {
+    flexDirection: 'column',
   },
 });

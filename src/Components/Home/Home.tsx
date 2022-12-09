@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { FlatList, Text, View } from 'react-native';
-import { style } from './Home.style';
 import { observer } from 'mobx-react-lite';
 import { branchesStore, userStore } from '../../Stores';
+import { Card } from '../Card/Card';
+import { globalStyle } from '../Variables/global.style';
 
 const Item = ({ title }: { title: string }) => (
   <View>
@@ -34,38 +35,34 @@ export const Home: React.FC = observer(() => {
   ];
 
   return (
-    <View style={style.container}>
-      <View style={style.card}>
-        <Text style={style.text}>Welcome {UserStore.user?.username}</Text>
-        <Text style={style.text}>
+    <View style={globalStyle.container}>
+      <Card>
+        <Text style={globalStyle.text}>Welcome {UserStore.username}</Text>
+        <Text style={globalStyle.text}>
           Current branch: {BranchesStore.branch.name}
         </Text>
-      </View>
+      </Card>
 
-      <View style={style.card}>
-        <Text style={style.text}>Number of tests</Text>
-        <Text style={style.text}>{numberOfTests}</Text>
-      </View>
+      <Card>
+        <Text style={globalStyle.text}>Number of tests</Text>
+        <Text style={globalStyle.text}>{numberOfTests}</Text>
+      </Card>
 
-      <View style={[style.card, style.cardColumn]}>
-        <Text style={style.title}>Recent added tests</Text>
-
+      <Card title="Recent added tests">
         <FlatList
           data={tests}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
-      </View>
+      </Card>
 
-      <View style={[style.card, style.cardColumn]}>
-        <Text style={style.title}>Recent runs</Text>
-
+      <Card title="Recent runs">
         <FlatList
           data={tests}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
-      </View>
+      </Card>
     </View>
   );
 });
