@@ -3,6 +3,7 @@ import {
   cardBackground,
   cardBorderColor,
   inputBorderColor,
+  background,
 } from '../Variables/color';
 
 export const style = StyleSheet.create({
@@ -10,6 +11,7 @@ export const style = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: background,
   },
   form: {
     flexDirection: 'column',
